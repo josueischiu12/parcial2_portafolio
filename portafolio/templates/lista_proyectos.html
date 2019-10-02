@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul class="list-group">
+    {% for proyecto in object_list %}
+        <li class="list-group-item"><a href="{% url 'portafolio:detalle_producto' proyecto.id %}">{{ proyecto.nombre }}</a></li>
+        {% empty %}
+        <li>No hay proyectos todavia</li>
+    {% endfor %}
+</ul>
+
+<a class="btn btn-primary" href="">Nuevo</a>
+
+{% endblock %}

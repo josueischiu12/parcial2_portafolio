@@ -1,0 +1,13 @@
+<h1>{{ product }} - Q. {{ product.price }}</h1>
+<p>{{ product.product_type }}</p>
+<img src="{{ product.image.url }}" style="max-width: 200px">
+<p>{{ product.description }}</p>
+<h3>Ingredientes</h3>
+
+<ul>
+    {% for recipe in ingredients %}
+        <li>{{ recipe.ingredient.name }} - {{ recipe.unit_quantity }} {{ recipe.ingredient.unit }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'products:delete' product.id %}"> delete<a/>
